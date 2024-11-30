@@ -10,7 +10,11 @@ body, span{
     font-family: Figtree, "NotoSansKR", "나눔 고딕", Helvetica, "Apple SD Gothic Neo", sans-serif;
 }
 .inner{padding: 1.25rem;}
-
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
 header{
     width: 100vw;
     position: fixed;
@@ -20,14 +24,12 @@ header{
 header .header-inner{
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     position: fixed;
     top: 0; left: 0;
     z-index: 999;
-    padding: 24px 25px 10px;
+    padding: 24px 1.25rem 10px;
     color: #000;
-    background-color: #fff;
 }
 section{
     width: 100%;
@@ -63,7 +65,26 @@ header .logo{
     color: #fff;
     background-color: #000;
 }
-
+.mo-menu{
+    font-size: 18px;
+    line-height: 17px;
+}
+.mo-menu > button{
+    font-size: 18px;
+    line-height: 17px;
+    position: absolute;
+}
+.mo-menu .close-menu{
+    display: none;
+}
+.mobile-menu{
+    display: none;
+    margin-top: 22px;
+}
+.mobile-menu li{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 /* about */
 .about{
     height: 100vh;
@@ -80,12 +101,10 @@ header .logo{
     margin: auto;
     font-size: 17.5vw;
     font-weight: 600;
-    /* letter-spacing: -0.2vw; */
-    /* font-family: "Inter", sans-serif; */
+    /* letter-spacing: -5px;
+    font-family: "Inter", sans-serif; */
 }
-/* .about img{
-    width: 280px;
-} */
+
 
 /* 2 ability */
 
@@ -137,7 +156,6 @@ header .logo{
 .work .scroll-container{
     overflow: hidden;
     outline: none;
-    margin-top: -14vw;
 }
 .work .sec1{
     width: 100%;
@@ -351,9 +369,6 @@ header .logo{
 .archive .year-lists:first-child{
     padding-bottom: 7vw;
 }
-.archive .year-lists:last-child{
-    padding-bottom: 17.4vw;
-}
 .archive .sec-title{
     position: relative;
     padding-bottom: 0.78vh;
@@ -472,17 +487,25 @@ header .logo{
 }
 .contact .footer{
     display: flex;
+    font-size: 18px;
 }
-.contact .footer ul{
-    margin-right: 130px;
-}
+
 
 @media (max-width: 767px) {
     .mo{
         display: block !important;
     }
+    .gnb{
+        display: none;
+    }
     .inner{
         padding: 0 3.73vw;
+    }
+    .about{
+        height: 90vh;
+    }
+    .work .wrap{
+        margin-top: 20vw;
     }
     .work .fixed-text{
         height: auto;
@@ -495,9 +518,6 @@ header .logo{
     .work .fixed-text.workfix {
         display: none;
     }
-    /* .work .fixed-text .inner{
-        padding-top: 19.9vw;
-    } */
     .work .fixed-text .inner h2 span {
         font-size: 13.3vw;
         letter-spacing: -0.4vw;
@@ -523,10 +543,6 @@ header .logo{
         font-size: 3.46vw;
         letter-spacing: -0.09vw;
         padding: 0.2vw 2.22vw 0.242vw;
-    }
-    .work .sec2{
-        padding-top: 13.55vw;
-        /* padding-bottom: 18.2vw; */
     }
     .work .sec3{
         padding-bottom: 18.2vw;
@@ -571,6 +587,9 @@ header .logo{
     .work .sec2 .inner .cont-wrap .project-experience .year span {
         font-size: 4vw;
     }
+    .archive .year-lists:last-child{
+        padding-bottom: 17.4vw;
+    }
     .archive .sec-title span {
         font-size: 5vw;
     }
@@ -589,18 +608,30 @@ header .logo{
         font-size: 4vw;
         letter-spacing: -0.12vw;
     }
+    .contact .footer{
+        font-size: 12px;
+    }
+    .contact .footer ul{
+        margin-right: 20px;
+    } 
 }
 
 
 @media (min-width: 768px) {
-    /* .work .sec2{
-        padding-top: 13.55vw;
-    } */
+    header .header-inner{
+        align-items: center;
+        background-color: #fff;
+    }
+    .work .scroll-container{
+        margin-top: -14vw;
+    }
     .work .sec2.poster{
         padding-top: 10.55vw;
     }
     .work .sec2.poster .inner .cont-wrap .project-experience ul li {
         padding: 0 0 22vw;
     }
-
+    .contact .footer ul{
+        margin-right: 130px;
+    } 
 }
