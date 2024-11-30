@@ -1,3 +1,5 @@
+
+// 아코디언 효과
 $(document).ready(function() {
     $('.content-lists button').click(function() {
         const imgBox = $(this).siblings('.img-box');
@@ -13,6 +15,8 @@ $(document).ready(function() {
     
 
 });
+
+// active 효과
 document.addEventListener('DOMContentLoaded', function() {
     // 'active' 클래스를 적용할 요소들을 선택
     const elements = document.querySelectorAll('.txt-wrap, .sec-title, .year-lists .ani, .active, .line-top, .line-bottom');
@@ -40,6 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
+// 네비게이션
 document.addEventListener("DOMContentLoaded", function() {
     // 모든 섹션(section 요소)와 내비게이션 링크를 가져옵니다
     const sections = document.querySelectorAll("section");
@@ -83,17 +89,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-// navLinks.forEach(link => {
-//     link.addEventListener("click", function(e) {
-//         e.preventDefault();
-//         const targetId = this.getAttribute("href").substring(1);
-//         const targetSection = document.getElementById(targetId);
 
-//         window.scrollTo({
-//             top: targetSection.offsetTop - header.offsetHeight,
-//             behavior: 'smooth'
-//         });
-//     });
-// });
 
 

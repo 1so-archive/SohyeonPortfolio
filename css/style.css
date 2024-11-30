@@ -316,10 +316,7 @@ header .logo{
     -webkit-transform: translateY(0);
     transform: translateY(0);
 }
-.line-top{
-    position: relative;
-}
-.line-bottom{
+.line-top, .line-bottom {
     position: relative;
 }
 .line-top.ani.active::before {
@@ -329,11 +326,26 @@ header .logo{
     background: #000;
     content: "";
     height: 1px;
-    left: 0;
     position: absolute;
+    left: 0;
+    width: 0%; /* 처음에 0%로 시작 */
     transition: width 1.05s cubic-bezier(.19,1,.22,1);
 }
-
+.line-top.ani.active::after{
+    width: 100% !important;
+}
+.line-bottom.ani.active::after{
+    width: 100% !important;
+}
+.line-bottom::after{
+    background: #000;
+    left: 0; bottom: 0;
+    content: "";
+    height: 1px;
+    position: absolute;
+    width: 0%; /* 처음에 0%로 시작 */
+    transition: width 1.05s cubic-bezier(.19,1,.22,1);
+}
 
 /* sec2 */
 .archive .year-lists:first-child{
@@ -426,20 +438,7 @@ header .logo{
     -webkit-transform: translateY(0);
     transform: translateY(0);
 }
-.line-top.ani.active::after{
-    width: 100% !important;
-}
-.line-bottom.ani.active::after{
-    width: 100% !important;
-}
-.line-bottom::after{
-    background: #000;
-    left: 0; bottom: 0;
-    content: "";
-    height: 1px;
-    position: absolute;
-    transition: width 1.05s cubic-bezier(.19,1,.22,1);
-}
+
 .archive .content-lists li.ani.active:first-child:after{
     transition-delay: 0.01s;
 }
@@ -496,8 +495,34 @@ header .logo{
     .work .fixed-text.workfix {
         display: none;
     }
-    .work .fixed-text .inner{
+    /* .work .fixed-text .inner{
         padding-top: 19.9vw;
+    } */
+    .work .fixed-text .inner h2 span {
+        font-size: 13.3vw;
+        letter-spacing: -0.4vw;
+    }
+    .work .fixed-text .inner .p-box p {
+        font-size: 4vw;
+        letter-spacing: -0.12vw;
+        line-height: 1.6;
+    }
+    .work .sec1 .carrer-box {
+        display: block;
+    }
+    .work .sec1 .carrer-box .carrer-lists .skill {
+        font-size: 4vw;
+        letter-spacing: -0.12vw;
+        line-height: 1.6;
+    }
+    .work .sec1 .carrer-box .field-lists {
+        margin: 1vw 0 0;
+    }
+    .work .sec1 .carrer-box .field-lists ul li span {
+        border-radius: 3.46vw;
+        font-size: 3.46vw;
+        letter-spacing: -0.09vw;
+        padding: 0.2vw 2.22vw 0.242vw;
     }
     .work .sec2{
         padding-top: 13.55vw;
@@ -527,10 +552,10 @@ header .logo{
     .work .sec2 .project-experience>ul>li {
         padding-bottom: 10vw;
     }
-    .work .sec2 .inner .cont-wrap .project-experience ul li a {
+    /* .work .sec2 .inner .cont-wrap .project-experience ul li a {
         width: 100%;
         margin-top: 4vw;
-    }
+    } */
     .work .sec2 .inner .cont-wrap .project-experience .img-box{
         /* width: 92.53vw; */
         width: 100%;
